@@ -14,7 +14,7 @@ namespace DashboardProject.Pages
     {
         public static void GoTo()
         {
-            Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress + "log-in?redirect_to=https%3A%2F%2Fwordpress.com%2F");
+            Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress + "https://qa.app.qa.tsretail.co.za/betanalysis/");
 
             var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(10));
             wait.Until(d => d.SwitchTo().ActiveElement().GetAttribute("id") == "usernameOrEmail");
@@ -44,22 +44,14 @@ namespace DashboardProject.Pages
 
         public void Login()
         {
-            Thread.Sleep(3000);
-            var loginInput = Browser.FindElement(By.Id("usernameOrEmail"));
+            var loginInput = Browser.FindElement(By.Id("#username"));
             loginInput.SendKeys(userName);
-
-            var continueButton = Driver.Instance.FindElement(By.CssSelector(".form-button"));
-            continueButton.Click();
-
-            Thread.Sleep(3000);
-            var passwordInput = Driver.Instance.FindElement(By.CssSelector("#password"));
+       
+            var passwordInput = Browser.FindElement(By.Id("#password"));
             passwordInput.SendKeys(passWord);
 
-            Thread.Sleep(30);
-            var loginButton = Driver.Instance.FindElement(By.CssSelector(".form-button"));
+            var loginButton = Browser.FindElement(By.CssSelector("#kc-login"));
             loginButton.Click();
-
-            Thread.Sleep(3000);
         }
     }
 }
