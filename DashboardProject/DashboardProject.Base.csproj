@@ -98,6 +98,7 @@
     <Compile Include="Browser.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="ExpectedConditions.cs" />
+    <Compile Include="Pages\BetAnalysisPage.cs" />
     <Compile Include="Pages\LoginPage.cs" />
     <Compile Include="Pages\Login.cs" />
     <Compile Include="UnitTests.cs" />

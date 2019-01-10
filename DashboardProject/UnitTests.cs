@@ -18,8 +18,13 @@ namespace DashboardProject
         [TestMethod]
         public void LoginTest()
         {
-           
+            LoginPage.GoTo();
+        }
 
+        [TestMethod]
+        public void ClickOnBetAnalysis()
+        {
+            BetAnalysisPage.BetAnalysis();
         }
     }
 }
