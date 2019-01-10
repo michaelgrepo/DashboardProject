@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using Turfsport.QA.Framework.Core;
 
 namespace DashboardProject.Pages
 {
@@ -44,7 +45,7 @@ namespace DashboardProject.Pages
         public void Login()
         {
             Thread.Sleep(3000);
-            var loginInput = Driver.Instance.FindElement(By.Id("usernameOrEmail"));
+            var loginInput = Browser.FindElement(By.Id("usernameOrEmail"));
             loginInput.SendKeys(userName);
 
             var continueButton = Driver.Instance.FindElement(By.CssSelector(".form-button"));
