@@ -14,7 +14,7 @@ namespace DashboardProject.Pages
     {
         public static void GoTo()
         {
-            Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress + "https://qa.app.qa.tsretail.co.za/betanalysis/");
+            Driver.Instance.Navigate().GoToUrl(Driver.BaseAddress + "https://");
 
             var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(10));
             wait.Until(d => d.SwitchTo().ActiveElement().GetAttribute("id") == "usernameOrEmail");
